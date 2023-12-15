@@ -19,6 +19,7 @@ function App() {
 
         {/* <div className="container"> */}
         <ListNavbar />
+
         <div className="text-center">
           <div className="anime">
             <div className="zoro-logo-search">
