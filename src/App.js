@@ -10,6 +10,9 @@ import BajakLaut from "./bajaklaut";
 import ZoroIs from "./zoro";
 import TopSearch from "./topsearch";
 import DownBody from "./downbody";
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
+import { Component } from "react";
+import Home from "./home";
 
 function App() {
   return (
@@ -19,7 +22,6 @@ function App() {
 
         {/* <div className="container"> */}
         <ListNavbar />
-
         <div className="text-center">
           <div className="anime">
             <div className="zoro-logo-search">
