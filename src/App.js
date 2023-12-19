@@ -13,6 +13,7 @@ import DownBody from "./downbody";
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
 import { Component } from "react";
 import Home from "./home";
+import Trending from "./trending";
 
 function App() {
   return (

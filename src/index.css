@@ -171,3 +171,28 @@
   color: #212222;
   background-color: #b6e90e;
 }
+
+.card-1 {
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  row-gap: 10px;
+  padding: 16px 3px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-family: sans-serif;
+  word-break: break-word;
+  position: relative;
+  height: 100%;
+  min-height: 140px;
+}
+
+.diamonds {
+  display: block;
+  justify-content: space-between;
+  font-weight: 400;
+  padding: 50px 50px;
+}
