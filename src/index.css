@@ -175,7 +175,7 @@
 .card-1 {
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
+  width: 150px;
   border: 1px solid;
   border-radius: 10px;
   row-gap: 10px;
@@ -186,20 +186,44 @@
   font-family: sans-serif;
   word-break: break-word;
   position: relative;
-  height: 100%;
+  height: 150px;
   min-height: 140px;
-}
-
-.card-1 {
   border-style: solid;
   border-width: 3px;
+  text-align: center;
+}
+
+.card-twilight {
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 150px;
+  border: 1px solid;
+  border-radius: 10px;
+  row-gap: 10px;
+  padding: 16px 3px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-family: sans-serif;
+  word-break: break-word;
+  position: relative;
+  height: 200px;
+  min-height: 140px;
+  border-style: solid;
+  border-width: 3px;
+  text-align: center;
 }
 
 .diamonds {
   display: block;
-  justify-content: space-between;
-  font-weight: 400;
-  padding: 50px 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.twilightpass {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-control {
