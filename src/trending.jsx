@@ -110,8 +110,23 @@ const Trending = () => {
       <div className="col-lg-6 mb-2">
         <p className="pl-3">User ID</p>
         <input type="number" name="user_id" className="form-control" placeholder="Masukkan User ID" autoComplete="off"></input>
+        <input type="hidden" name="zone_id" id="zone_id" value="1"></input>
+      </div>
+      <div className="col-lg-6 mb-2">
         <p className="pl-3">Zone ID</p>
         <input type="number" name="zone_id" className="form-control zone-input" placeholder="Masukkan Zone ID" autoComplete="off"></input>
+        <p>
+          <em>
+            "Contoh: 12345678 (1234). ID = 123456789 dan Server = 123. Untuk mengetahui User ID Anda, silahkan klik menu profile dibagian kiri atas pada menu profile dibagian kiri atas pada menu utama game. USer ID akan terlihat dibagian
+            bawah Nama karakter game Anda."
+          </em>
+        </p>
+      </div>
+      <div className="form-row pt-3">
+        <div className="col-lg-6">
+          <p className="pl-3">No.Whatsapp</p>
+          <input type="text" name="wa" placeholder="Masukkan No. Whatsapp" className="form-control" value="088888888888" required></input>
+        </div>
       </div>
       <p>Variasi Spesial</p>
       <Row>
