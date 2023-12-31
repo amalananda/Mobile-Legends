@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ListNavbar from "./listnavbar";
-import { Container, Row, Col, Input, Button } from "reactstrap";
+import { Container, Button } from "reactstrap";
 
 const placeHolder2 = [
   {
@@ -105,12 +105,13 @@ const placeHolder = [
 ];
 
 const Trending = () => {
+  const [clickedId, setClickedId ] = useState('')
+
   return (
     <Container>
       <div className="col-lg-6 mb-2">
         <p className="pl-3">User ID</p>
         <input type="number" name="user_id" className="form-control" placeholder="Masukkan User ID" autoComplete="off"></input>
-        <input type="hidden" name="zone_id" id="zone_id" value="1"></input>
       </div>
       <div className="col-lg-6 mb-2">
         <p className="pl-3">Zone ID</p>
@@ -125,41 +126,52 @@ const Trending = () => {
       <div className="form-row pt-3">
         <div className="col-lg-6">
           <p className="pl-3">No.Whatsapp</p>
-          <input type="text" name="wa" placeholder="Masukkan No. Whatsapp" className="form-control" value="088888888888" required></input>
+          <input type="text" name="wa" placeholder="081xxxx" className="form-control"  required></input>
         </div>
       </div>
-      <p>Variasi Spesial</p>
-      <Row>
+      <p className="my-3">Variasi Spesial</p>
+      <div className='cads-flex'>
         {placeHolder2.map((data) => {
           return (
-            <Col md={3} sm={6} xs={6}>
-              <div className="card-twilight" button onClick={() => alert("Button Clicked")}>
+            <div
+              id={`${data.nama_diamond}-id`}
+              className={clickedId == `${data.nama_diamond}-id` ? "card-twilight clicked-diamond" : "card-twilight"}
+              button
+              onClick={() => setClickedId(`${data.nama_diamond}-id`)}
+            >
                 <i className="fas fa-arrow-right">
                   <img className="twilightpass" src="TwilightPass_MLBB.png" width="75px" />
                   <div className="rill"></div> {data.nama_diamond}
                   <div className="harga"></div> {data.harga}
                 </i>
               </div>
-            </Col>
+
           );
         })}
-      </Row>
-      <p>Variasi Instan</p>
-      <Row>
+      </div>
+      <p className="my-3">Variasi Instan</p>
+      <div className='cads-flex'>
         {placeHolder.map((data) => {
           return (
-            <Col md={3} sm={6} xs={6}>
-              <div className="card-1" button onClick={() => alert("Button clicked!")}>
+            <div
+            id={`${data.nama_diamond}-id`}
+            className={clickedId == `${data.nama_diamond}-id` ? "card-1 clicked-diamond" : "card-1"}
+            button
+            onClick={() => setClickedId(`${data.nama_diamond}-id`)}
+            >
                 <i className="fas fa-arrow-right">
                   <img className="diamonds" src="Diamonds.png" width="50px" />
                   <div className="rill"></div> {data.nama_diamond}
                   <div className="harga"></div> {data.harga}
                 </i>
               </div>
-            </Col>
           );
         })}
-      </Row>
+      </div>
+
+      <Button className='button-beli'>
+        {"Beli"}
+      </Button>
     </Container>
   );
 };
