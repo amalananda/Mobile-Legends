@@ -14,16 +14,18 @@ import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-rout
 import { Component } from "react";
 import Home from "./home";
 import Trending from "./trending";
+import Mobilegame from "./game";
 
 function App() {
   return (
     <div className="App">
-      <OnePiece>
-        {/* <div className="absolute-navbar"></div> */}
+      {/* <OnePiece> */}
+      {/* <div className="absolute-navbar"></div> */}
 
-        {/* <div className="container"> */}
-        <ListNavbar />
-        <div className="text-center">
+      {/* <div className="container"> */}
+      <ListNavbar />
+      <Mobilegame />
+      {/* <div className="text-center">
           <div className="anime">
             <div className="zoro-logo-search">
               <BajakLaut />
@@ -33,9 +35,9 @@ function App() {
             </div>
             <ZoroIs />
           </div>
-        </div>
-        {/* </div> */}
-      </OnePiece>
+        </div> */}
+      {/* </div> */}
+      {/* </OnePiece> */}
     </div>
   );
 }

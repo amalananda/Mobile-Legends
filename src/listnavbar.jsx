@@ -10,22 +10,22 @@ const ListNavbar = () => {
         <DropdownNav />
       </div>
       <div className="item-nav">
-        <Link to="/home" role="button">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/home" role="button">
           Home
         </Link>
       </div>
       <div className="item-nav">
-        <Link to="/trending" role="button">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/trending" role="button">
           Trending
         </Link>
       </div>
       <div className="item-nav">
-        <Link to="/update" role="button">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/update" role="button">
           Recent Update
         </Link>
       </div>
       <div className="item-nav">
-        <Link to="/newest" role="button">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/newest" role="button">
           New Release
         </Link>
       </div>

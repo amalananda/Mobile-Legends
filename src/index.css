@@ -13,7 +13,7 @@
   height: 60px;
   background-color: #212222;
   padding: 0px;
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 0px;
   opacity: 0.8;
 }
@@ -192,6 +192,7 @@
   text-align: center;
   margin-right: 15px;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .card-twilight {
@@ -215,12 +216,13 @@
   width: 150px;
   margin-right: 15px;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .clicked-diamond {
-background-color: #e3f2b2;
+  background-color: #e3f2b2;
 }
-.cads-flex{
+.cads-flex {
   display: flex;
   flex-wrap: wrap;
 }
@@ -237,7 +239,7 @@ background-color: #e3f2b2;
   margin-right: auto;
 }
 
-.button-beli{
+.button-beli {
   width: 150px;
   margin-top: 15px;
 }
@@ -256,6 +258,33 @@ background-color: #e3f2b2;
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.game-flex {
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 150px;
+  border: 1px solid;
+  border-radius: 10px;
+  row-gap: 10px;
+  padding: 16px 3px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-family: sans-serif;
+  word-break: break-word;
+  position: relative;
+  height: 150px;
+  min-height: 140px;
+  border-style: solid;
+  border-width: 3px;
+  text-align: center;
+  margin-right: 15px;
+  margin-top: 230px !important;
+  text-align: center;
+  margin: auto;
 }
 
 @media only screen and (min-width: 320px) {
@@ -290,6 +319,42 @@ background-color: #e3f2b2;
 }
 @media only screen and (min-width: 1536px) {
   .container {
+    max-width: 1536px;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  .navbar-list {
+    max-width: 320px;
+  }
+}
+@media only screen and (min-width: 375px) {
+  .navbar-list {
+    max-width: 375px;
+  }
+}
+@media only screen and (min-width: 414px) {
+  .navbar-list {
+    max-width: 414px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .navbar-list {
+    max-width: 768px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navbar-list {
+    max-width: 1024px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .navbar-list {
+    max-width: 1280px;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .navbar-list {
     max-width: 1536px;
   }
 }
