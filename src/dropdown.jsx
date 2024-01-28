@@ -12,11 +12,11 @@ function DropdownNav({ direction, ...args }) {
       <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={direction}>
         <DropdownToggle caret>Menu</DropdownToggle>
         <DropdownMenu {...args}>
-          <DropdownItem href="/home" role="button">
+          <DropdownItem href="/" role="button">
             Home
           </DropdownItem>
-          <DropdownItem href="/trending" role="button">
-            Trending
+          <DropdownItem href="/mobile_legend" role="button">
+            Mobile Legend
           </DropdownItem>
           <DropdownItem href="/update" role="button">
             Recent Update

@@ -5,10 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./home";
-import Trending from "./legend";
+import MobileLegend from "./mobile_legend";
 import Update from "./update";
 import Newest from "./newest";
-// import OnePiece from "./onepiece";
+
 
 const router = createBrowserRouter([
   {
@@ -20,8 +20,8 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/trending",
-    element: <Trending />,
+    path: "/mobile_legend",
+    element: <MobileLegend />,
   },
   {
     path: "/update",
@@ -35,9 +35,10 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <OnePiece>
+
   <RouterProvider router={router} />
-  // </OnePiece>
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -10,7 +10,7 @@ const ListNavbar = () => {
         <DropdownNav />
       </div>
       <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/home" role="button">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/" role="button">
           Home
         </Link>
       </div>

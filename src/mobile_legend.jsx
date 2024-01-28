@@ -104,12 +104,13 @@ const placeHolder = [
   },
 ];
 
-const Legend = () => {
+const MobileLegend = () => {
   const [clickedId, setClickedId] = useState("");
 
   return (
+<>
+    <ListNavbar />
     <Container>
-      <ListNavbar />
       <div className="col-lg-6 mb-2">
         <p className="pl-3">User ID</p>
         <input type="number" name="user_id" className="form-control" placeholder="Masukkan User ID" autoComplete="off"></input>
@@ -157,7 +158,8 @@ const Legend = () => {
 
       <Button className="button-beli">{"Beli"}</Button>
     </Container>
+    </>
   );
 };
 
-export default Legend;
+export default MobileLegend;
