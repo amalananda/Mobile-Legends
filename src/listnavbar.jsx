@@ -15,18 +15,18 @@ const ListNavbar = () => {
         </Link>
       </div>
       <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/trending" role="button">
-          Trending
+        <Link style={{ textDecoration: "none", color: "black" }} to="/pesanan" role="button">
+          Cek Pesanan
         </Link>
       </div>
       <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/update" role="button">
-          Recent Update
+        <Link style={{ textDecoration: "none", color: "black" }} to="/daftar" role="button">
+          Daftar Harga
         </Link>
       </div>
       <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/newest" role="button">
-          New Release
+        <Link style={{ textDecoration: "none", color: "black" }} to="/kontak" role="button">
+          Kontak
         </Link>
       </div>
     </ul>

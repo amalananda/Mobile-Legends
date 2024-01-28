@@ -13,7 +13,7 @@ import DownBody from "./downbody";
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
 import { Component } from "react";
 import Home from "./home";
-import Trending from "./trending";
+import Trending from "./legend";
 import Mobilegame from "./game";
 
 function App() {

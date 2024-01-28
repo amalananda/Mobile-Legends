@@ -104,11 +104,12 @@ const placeHolder = [
   },
 ];
 
-const Trending = () => {
+const Legend = () => {
   const [clickedId, setClickedId] = useState("");
 
   return (
     <Container>
+      <ListNavbar />
       <div className="col-lg-6 mb-2">
         <p className="pl-3">User ID</p>
         <input type="number" name="user_id" className="form-control" placeholder="Masukkan User ID" autoComplete="off"></input>
@@ -118,7 +119,7 @@ const Trending = () => {
         <input type="number" name="zone_id" className="form-control zone-input" placeholder="Masukkan Zone ID" autoComplete="off"></input>
         <p>
           <em>
-            "Contoh: 12345678 (1234). ID = 123456789 dan Server = 123. Untuk mengetahui User ID Anda, silahkan klik menu profile dibagian kiri atas pada menu profile dibagian kiri atas pada menu utama game. USer ID akan terlihat dibagian
+            "Contoh: 12345678 (1234). ID = 123456789 dan Server = 123. Untuk mengetahui User ID Anda, silahkan klik menu profile dibagian kiri atas pada menu profile dibagian kiri atas pada menu utama game. User ID akan terlihat dibagian
             bawah Nama karakter game Anda."
           </em>
         </p>
@@ -159,4 +160,4 @@ const Trending = () => {
   );
 };
 
-export default Trending;
+export default Legend;

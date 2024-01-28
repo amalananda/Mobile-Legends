@@ -7,39 +7,40 @@
 
 .navbar-list {
   display: flex;
-  justify-content: start;
+  background-color: #a7d397;
+  background-size: cover;
+  /* justify-content: start; */
   align-items: center;
-  text-align: center;
-  height: 60px;
-  background-color: #212222;
+  text-align: left;
+  height: 84px;
+  width: 1443px;
   padding: 0px;
   max-width: 100%;
   margin-bottom: 0px;
   opacity: 0.8;
+  font-family: "Inria Serif";
+  font-size: 18px;
 }
 
-.absolute-navbar {
-  /* display: flex; */
-  /* justify-content: start; */
-  /* align-items: center; */
+/* .absolute-navbar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   height: 60px;
   background-color: #212222;
   width: 100%;
   margin-bottom: 0px;
   position: absolute;
-}
+} */
 
 .item-nav {
   margin-left: 20px;
   color: white;
   display: block;
+  text-align: right;
 }
 
-.item-nav:hover {
-  color: green;
-}
-
-.nav.ul {
+/* .nav.ul {
   display: flex;
   list-style: none;
   width: 40%;
@@ -60,8 +61,8 @@
 @media screen and (max-width: 576px) {
   .toggle-menu {
     display: flex;
-  }
-  .nav.ul {
+  } */
+/* .nav.ul {
     position: absolute;
     left: 0;
     top: 0;
@@ -71,8 +72,8 @@
     justify-content: space-evenly;
     background-color: black;
     z-index: -1;
-  }
-}
+  } */
+/* } */
 
 .one-piece {
   background-size: cover;
@@ -323,38 +324,24 @@
   }
 }
 
-@media only screen and (min-width: 320px) {
+@media screen and (max-width: 1536px) {
   .navbar-list {
-    max-width: 320px;
+    padding: 0 20px;
+    background-color: #a7d397;
+    background-size: cover;
+  }
+
+  .item-nav {
+    display: block;
   }
 }
-@media only screen and (min-width: 375px) {
+
+@media screen and (min-width: 320px) {
   .navbar-list {
-    max-width: 375px;
+    padding: 0 20px;
   }
-}
-@media only screen and (min-width: 414px) {
-  .navbar-list {
-    max-width: 414px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .navbar-list {
-    max-width: 768px;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .navbar-list {
-    max-width: 1024px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .navbar-list {
-    max-width: 1280px;
-  }
-}
-@media only screen and (min-width: 1536px) {
-  .navbar-list {
-    max-width: 1536px;
+
+  .item-nav {
+    display: block;
   }
 }
