@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ListNavbar = () => {
   return (
     <ul className="navbar-list">
-      <div className="item-nav">
+      <div className="mobile-item-nav">
         <DropdownNav />
       </div>
       <div className="item-nav">
