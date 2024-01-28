@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <ListNavbar />
+      {/* change into MobileLegendCard */}
       <Mobilegame />
 
     </div>

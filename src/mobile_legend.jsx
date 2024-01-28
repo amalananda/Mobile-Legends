@@ -104,6 +104,7 @@ const placeHolder = [
   },
 ];
 
+// MobileLgendPage
 const MobileLegend = () => {
   const [clickedId, setClickedId] = useState("");
 
