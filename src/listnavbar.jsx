@@ -15,7 +15,7 @@ const ListNavbar = () => {
         </Link>
       </div>
       <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/pesanan" role="button">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/cekpesanan" role="button">
           Cek Pesanan
         </Link>
       </div>
