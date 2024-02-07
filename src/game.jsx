@@ -16,7 +16,7 @@ const MobileLegendCard = () => {
       <div className="game-flex">
         {gameHolder.map((data) => {
           return (
-            <Link style={{ textDecoration: "none", color: "black" }} to={`/mobilelegendpage`}>
+            <Link style={{ textDecoration: "none", color: "black" }} to={`/mobile_legend`}>
               <div onClick={() => setClickedId(`${data.nama_game}-id`)}>
                 <img className="mobilelegend" src="Mobile-Legend.jpg" width="125px" />
                 <div> {data.nama_game}</div>
