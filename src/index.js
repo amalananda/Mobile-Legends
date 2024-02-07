@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/mobile_legend_page",
+    path: "/mobile_legend",
     element: <MobileLegendPage />,
   },
   {
