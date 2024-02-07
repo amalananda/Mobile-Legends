@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ListNavbar from "./listnavbar";
 import { Container, Button } from "reactstrap";
-import MetodePembayaran from "./metodepembayaran";
+import MetodePembayaran from "./metode_pembayaran";
 import Footer from "./footer";
 
 const placeHolderTwilight = [

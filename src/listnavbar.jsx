@@ -15,7 +15,7 @@ const ListNavbar = () => {
         </Link>
       </div>
       <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/cekpesanan" role="button">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/cek_pesanan" role="button">
           Cek Pesanan
         </Link>
       </div>
@@ -27,6 +27,11 @@ const ListNavbar = () => {
       <div className="item-nav">
         <Link style={{ textDecoration: "none", color: "black" }} to="/kontak" role="button">
           Kontak
+        </Link>
+      </div>
+      <div className="item-nav">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/login_page" role="button">
+          Login
         </Link>
       </div>
     </ul>

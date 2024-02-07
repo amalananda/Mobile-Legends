@@ -27,6 +27,9 @@ function DropdownNav({ direction, ...args }) {
           <DropdownItem href="/newest" role="button">
             Kontak
           </DropdownItem>
+          <DropdownItem href="/loginpage" role="button">
+            Login
+          </DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div>

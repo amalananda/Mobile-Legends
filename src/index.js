@@ -5,10 +5,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./home";
-import MobileLegendPage from "./mobilelegendpage";
+import MobileLegendPage from "./mobile_legend_page";
 import Update from "./update";
 import Newest from "./newest";
-import CekPesanan from "./cekpesanan";
+import CekPesanan from "./cek_pesanan";
+import SignUp from "./login_page";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/mobilelegendpage",
+    path: "/mobile_legend_page",
     element: <MobileLegendPage />,
   },
   {
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
     element: <Newest />,
   },
   {
-    path: "/cekpesanan",
+    path: "/cek_pesanan",
     element: <CekPesanan />,
+  },
+  {
+    path: "/login_page",
+    element: <SignUp />,
   },
 ]);
 
