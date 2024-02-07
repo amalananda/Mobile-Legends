@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ListNavbar from "./listnavbar";
 import { Container, Button } from "reactstrap";
 import MetodePembayaran from "./metode_pembayaran";
+import { ProductApi } from './apis/productApi';
 import Footer from "./footer";
 
 
@@ -66,7 +67,7 @@ const MobileLegendPage = () => {
         </div>
         <p className="my-3">Variasi Instan</p>
         <div className="cads-flex">
-          {setDiamondProducts.map((data) => {
+          {diamondProducts.map((data) => {
             return (
               <div id={`${data.id}-id`} className={clickedId == `${data.id}-id` ? "card-1 clicked-diamond" : "card-1"} button onClick={() => setClickedId(`${data.id}-id`)}>
                 <img className="diamonds" src="Diamonds.png" width="50px" />
