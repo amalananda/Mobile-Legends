@@ -13,6 +13,14 @@ export const ProductApi = {
     }
     const response = await axios.get(PATH, {params: request})
     return response
+  },
+  getOne: async (params) => {
+    const request = {
+      game_type: params.game_type,
+      product_type: params.product_type
+    }
+    const response = await axios.get(`PATH/${params.id}`)
+    return response
   }
 
 }

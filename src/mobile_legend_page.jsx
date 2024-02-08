@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ListNavbar from "./listnavbar";
-import { Container, Button } from "reactstrap";
+import {
+  Container,
+  Button
+} from "reactstrap"
 import MetodePembayaran from "./metode_pembayaran";
 import { ProductApi } from './apis/productApi';
 import Footer from "./footer";
@@ -9,8 +12,10 @@ import Footer from "./footer";
 // MobileLgendPage
 const MobileLegendPage = () => {
   const [clickedId, setClickedId] = useState("");
+  const [chosenProduct, setChosenProduct] = useState(null);
   const [specialProducts, setSpecialProducts] = useState([]);
   const [diamondProducts, setDiamondProducts] = useState([]);
+
 
   useEffect(() => {
     const specialProductParams = {
@@ -29,6 +34,13 @@ const MobileLegendPage = () => {
         .then(response => setDiamondProducts(response.data.data))
       .catch(error=> console.log(error))
   }, [])
+
+
+  const hanldeClickProduct = (id, card_id) => {
+    setChosenProduct(id)
+    setClickedId(card_id)
+  }
+
   return (
     <>
       <ListNavbar />
@@ -57,7 +69,12 @@ const MobileLegendPage = () => {
         <div className="cads-flex">
           {specialProducts.map((data) => {
             return (
-              <div id={`${data.id}-id`} className={clickedId == `${data.id}-id` ? "card-twilight clicked-diamond" : "card-twilight"} button onClick={() => setClickedId(`${data.id}-id`)}>
+              <div
+                id={`${data.id}-product`}
+                className={clickedId == `${data.id}-product` ? "card-twilight clicked-diamond" : "card-twilight"}
+                button
+                onClick={() => hanldeClickProduct(data.id, `${data.id}-product`)}
+                >
                 <img className="twilightpass" src="TwilightPass_MLBB.png" width="75px" />
                 <div>{data.name}</div>
                 <div>{data.price}</div>
@@ -69,7 +86,12 @@ const MobileLegendPage = () => {
         <div className="cads-flex">
           {diamondProducts.map((data) => {
             return (
-              <div id={`${data.id}-id`} className={clickedId == `${data.id}-id` ? "card-1 clicked-diamond" : "card-1"} button onClick={() => setClickedId(`${data.id}-id`)}>
+              <div i
+                d={`${data.id}-product`}
+                className={clickedId == `${data.id}-product` ? "card-1 clicked-diamond" : "card-1"}
+                button
+                onClick={() => hanldeClickProduct(data.id, `${data.id}-product`)}
+              >
                 <img className="diamonds" src="Diamonds.png" width="50px" />
                 <div>{data.name}</div>
                 <div>{data.price}</div>
