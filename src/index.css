@@ -407,6 +407,153 @@ section a {
   color: #fff;
 }
 
+.form-sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.signup-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 440px;
+  height: 480px;
+  padding: 30px;
+  border-radius: 10%;
+  background-color: #a7d397;
+  border: none;
+}
+
+.signup-box header {
+  text-align: center;
+  margin: 10px 0 40px 0;
+  font-size: 30px;
+  font-style: initial;
+  font-weight: 500;
+}
+
+.signup-box .input-field {
+  width: 100%;
+  height: 60%;
+  font-size: 17px;
+  padding: 0 25px;
+  margin-bottom: 25px;
+  border-radius: 10%;
+  border: none;
+  box-shadow: 0px 5px 10px rgba(91, 29, 236, 0.05);
+  outline: none;
+  transition: 0.3s;
+}
+
+.collabs-row {
+  background-color: #a7d397;
+  border-radius: 10px;
+}
+
+.collabs-row .first-row {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.collabs-row .second-row {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.time-section {
+  display: inline-block;
+  margin-left: 40px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+}
+
+.time-section:first-child {
+  margin-left: 0;
+}
+
+.time-section > .value {
+  background-color: #212222;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 70px;
+  color: #fff;
+  line-height: 100px;
+  text-align: center;
+}
+
+.time-label {
+  font-size: 11px;
+  padding-top: 4px;
+  text-align: center;
+}
+.scan-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.info-row {
+  display: block;
+  background-color: #a7d397;
+  border-radius: 10px;
+  margin: 0 0 0px 0;
+}
+
+.first-info header {
+  display: flex;
+  margin: 10px 0 20px 10px;
+  /* margin-left: 10px; */
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+}
+
+.second-info {
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cara-row {
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.order-info_row {
+  display: flex;
+  padding: 8px;
+  font-family: sans-serif;
+}
+
+.order-info_row .first-col {
+  color: #b6e90e;
+  width: 40%;
+  align-self: center;
+}
+
+.order-info_row .second-col {
+  padding-left: 20px;
+  width: 59%;
+  color: #b6e90e;
+  word-break: break-all;
+}
+
 @media only screen and (min-width: 320px) {
   .container {
     max-width: 320px;
@@ -519,5 +666,11 @@ section a {
 @media (min-width: 1440px) {
   & {
     padding: 1 rem calc((100vw - 1440px) / 2);
+  }
+}
+
+@media (width >= 500px) {
+  .form-log pt-3 {
+    width: 70;
   }
 }

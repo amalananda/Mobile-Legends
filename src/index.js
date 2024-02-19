@@ -9,7 +9,9 @@ import MobileLegendPage from "./mobile_legend_page";
 import Update from "./update";
 import Newest from "./newest";
 import CekPesanan from "./cek_pesanan";
-import SignUp from "./login_page";
+import LoginPage from "./login_page";
+import Payment from "./payment_page";
+import SignUp from "./sign_up_page";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/login_page",
+    element: <LoginPage />,
+  },
+  {
+    path: "/payment_page",
+    element: <Payment />,
+  },
+  {
+    path: "/sign_up",
     element: <SignUp />,
   },
 ]);
