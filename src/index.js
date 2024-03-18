@@ -6,12 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./home";
 import MobileLegendPage from "./mobile_legend_page";
-import Update from "./update";
 import Newest from "./newest";
 import CekPesanan from "./cek_pesanan";
 import LoginPage from "./login_page";
 import Payment from "./payment_page";
 import SignUp from "./sign_up_page";
+import DaftarHarga from "./daftar_harga";
 
 const router = createBrowserRouter([
   {
@@ -25,10 +25,6 @@ const router = createBrowserRouter([
   {
     path: "/mobile_legend",
     element: <MobileLegendPage />,
-  },
-  {
-    path: "/update",
-    element: <Update />,
   },
   {
     path: "/newest",
@@ -49,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/sign_up",
     element: <SignUp />,
+  },
+  {
+    path: "/daftar_harga",
+    element: <DaftarHarga />,
   },
 ]);
 

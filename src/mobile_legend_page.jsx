@@ -8,6 +8,7 @@ import popUp from "./pop_up";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import Payment from "./payment_page";
 import { Link } from "react-router-dom";
+import StringUtils from "./string_utilize";
 
 // MobileLgendPage
 const MobileLegendPage = (args) => {
@@ -74,7 +75,7 @@ const MobileLegendPage = (args) => {
               <div id={`${data.id}-product`} className={clickedId == `${data.id}-product` ? "card-twilight clicked-diamond" : "card-twilight"} button onClick={() => hanldeClickProduct(data.id, `${data.id}-product`)}>
                 <img className="twilightpass" src="TwilightPass_MLBB.png" width="75px" />
                 <div>{data.name}</div>
-                <div>{data.price}</div>
+                <div>{StringUtils.format_rupiah(data.price)}</div>
               </div>
             );
           })}
@@ -86,7 +87,7 @@ const MobileLegendPage = (args) => {
               <div i d={`${data.id}-product`} className={clickedId == `${data.id}-product` ? "card-1 clicked-diamond" : "card-1"} button onClick={() => hanldeClickProduct(data.id, `${data.id}-product`)}>
                 <img className="diamonds" src="Diamonds.png" width="50px" />
                 <div>{data.name}</div>
-                <div>{data.price}</div>
+                <div>{StringUtils.format_rupiah(data.price)}</div>
               </div>
             );
           })}

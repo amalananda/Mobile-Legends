@@ -18,16 +18,16 @@ function DropdownNav({ direction, ...args }) {
           <DropdownItem href="/" role="button">
             Home
           </DropdownItem>
-          <DropdownItem href="/cekpesanan" role="button">
+          <DropdownItem href="/cek_pesanan" role="button">
             Cek Pesanan
           </DropdownItem>
-          <DropdownItem href="/update" role="button">
+          <DropdownItem href="/daftar_harga" role="button">
             Daftar Harga
           </DropdownItem>
           <DropdownItem href="/newest" role="button">
             Kontak
           </DropdownItem>
-          <DropdownItem href="/loginpage" role="button">
+          <DropdownItem href="/login_page" role="button">
             Login
           </DropdownItem>
         </DropdownMenu>
