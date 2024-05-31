@@ -115,6 +115,11 @@
 .clicked-diamond {
   background-color: #e3f2b2;
 }
+
+.pl-3 {
+  margin-top: 20px;
+}
+
 .cads-flex {
   display: flex;
   flex-wrap: wrap;
@@ -136,6 +141,7 @@
   width: 150px;
   margin-top: 15px;
   background-color: #a7d397;
+  margin-bottom: 20px;
 }
 
 .button-beli.btn.btn-secondary {
@@ -490,6 +496,11 @@ section a {
 
 .time-section:first-child {
   margin-left: 0;
+}
+
+img.image-footer {
+  aspect-ratio: 1 / 1;
+  margin-top: 10px;
 }
 
 .time-section > .value {

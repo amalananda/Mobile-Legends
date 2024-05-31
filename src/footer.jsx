@@ -3,7 +3,7 @@ const Footer = () => {
     [
       { label: "Kontak kami", key: "header" },
       { image: "whatsapp.png", label: "+6281225097694", key: "item-1" },
-      { image: "instagram.png", label: "@malls_store", key: "item-2" },
+      { image: "socials.png", label: "@malls_store", key: "item-2" },
     ],
   ];
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
         <ul className={"col col-${index+1}"} key={"col-${index}"}>
           {col.map((link) => (
             <li key={"link-${col}-${index}"}>
-              <img className="imagefooter" src={link.image} />
+              <img className="image-footer" src={link.image} />
               {link.label}
             </li>
           ))}
