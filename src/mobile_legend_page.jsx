@@ -23,19 +23,22 @@ const MobileLegendPage = (args) => {
 
   useEffect(() => {
     const specialProductParams = {
-      game_type: "mobile_legend",
+      game_name: "mobile_legend",
       product_type: "special",
     };
     ProductApi.getAll(specialProductParams)
-      .then((response) => setSpecialProducts(response.data.data))
+      .then((response) => setSpecialProducts(response.data))
       .catch((error) => console.log(error));
 
     const dimondProductParams = {
-      game_type: "mobile_legend",
+      game_name: "mobile_legend",
       product_type: "diamond",
     };
     ProductApi.getAll(dimondProductParams)
-      .then((response) => setDiamondProducts(response.data.data))
+      .then((response) => {
+        setDiamondProducts(response.data)
+        console.log(response.data)
+      } )
       .catch((error) => console.log(error));
   }, []);
 
@@ -75,7 +78,7 @@ const MobileLegendPage = (args) => {
               <div id={`${data.id}-product`} className={clickedId == `${data.id}-product` ? "card-twilight clicked-diamond" : "card-twilight"} button onClick={() => hanldeClickProduct(data.id, `${data.id}-product`)}>
                 <img className="twilightpass" src="TwilightPass_MLBB.png" width="75px" />
                 <div>{data.name}</div>
-                <div>{StringUtils.format_rupiah(data.price)}</div>
+                <div>{StringUtils.format_rupiah(data.selling_price)}</div>
               </div>
             );
           })}
@@ -87,7 +90,7 @@ const MobileLegendPage = (args) => {
               <div i d={`${data.id}-product`} className={clickedId == `${data.id}-product` ? "card-1 clicked-diamond" : "card-1"} button onClick={() => hanldeClickProduct(data.id, `${data.id}-product`)}>
                 <img className="diamonds" src="Diamonds.png" width="50px" />
                 <div>{data.name}</div>
-                <div>{StringUtils.format_rupiah(data.price)}</div>
+                <div>{StringUtils.format_rupiah(data.selling_price)}</div>
               </div>
             );
           })}
