@@ -3,6 +3,7 @@ import ListNavbar from "./listnavbar";
 import { Container, Button } from "reactstrap";
 import MetodePembayaran from "./metode_pembayaran";
 import { ProductApi } from "./apis/productApi";
+import { PaymentApi } from "./apis/paymentApi";
 import Footer from "./footer";
 import popUp from "./pop_up";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
@@ -17,6 +18,7 @@ const MobileLegendPage = (args) => {
   const [specialProducts, setSpecialProducts] = useState([]);
 
   const [diamondProducts, setDiamondProducts] = useState([]);
+  const [payments, setPayments] = useState([]);
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
@@ -37,7 +39,14 @@ const MobileLegendPage = (args) => {
     ProductApi.getAll(dimondProductParams)
       .then((response) => {
         setDiamondProducts(response.data)
-        console.log(response.data)
+
+      } )
+      .catch((error) => console.log(error));
+
+      PaymentApi.getAll()
+      .then((response) => {
+        setPayments(response.data)
+
       } )
       .catch((error) => console.log(error));
   }, []);
@@ -95,9 +104,9 @@ const MobileLegendPage = (args) => {
             );
           })}
         </div>
-        <MetodePembayaran />
+        <MetodePembayaran payments={payments} />
         <Button className="button-beli" onClick={toggle}>
-          Beli
+          {'Beli'}
         </Button>
         <Modal isOpen={modal} toggle={toggle} {...args}>
           <ModalHeader toggle={toggle}>Detail Pesanan</ModalHeader>
@@ -133,7 +142,7 @@ const MobileLegendPage = (args) => {
               <Link style={{ textDecoration: "none", color: "black" }} to={`/payment_page`}>
                 Confirm
               </Link>
-            </Button>{" "}
+            </Button>
             <Button color="second" onClick={toggle}>
               Cancel
             </Button>

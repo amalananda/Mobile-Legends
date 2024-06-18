@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+// TODO: remove when image ratio fix
 const placeMetodePembayaran = [
   {
     nama_pembayaran: "Shopee Pay",
@@ -75,24 +77,30 @@ const placeMetodePembayaran = [
   },
 ];
 
-const MetodePembayaran = () => {
+const MetodePembayaran = ({payments}) => {
   const [clickedId, setClickedId] = useState("");
 
   return (
     <>
       <p className="my-3">Metode Pembayaran</p>
       <div className="meth-flex">
-        {placeMetodePembayaran.map((data) => {
+        {payments .map((payment) => {
           return (
             <div
-              key={`${data.nama_pembayaran}-id`}
-              id={`${data.nama_pembayaran}-id`}
-              className={clickedId == `${data.nama_pembayaran}-id` ? "metode-pembayaran clicked-pembayaran" : "metode-pembayaran"}
+              key={`${payment.id}`}
+              id={`${payment.id}`}
+              className={clickedId == `${payment.name}-id` ? "metode-pembayaran clicked-pembayaran" : "metode-pembayaran"}
               button
-              onClick={() => setClickedId(`${data.nama_pembayaran}-id`)}
+              onClick={() => setClickedId(`${payment.name}-id`)}
             >
-              <img className="image" src={data.image} height={data.image_height} width={data.image_width} margin={data.image_top} />
-              <div>{data.nama_pembayaran}</div>
+              <img
+                className="image"
+                src={payment.image_url}
+                // height={data.image_height}
+                // width={data.image_width}
+                // margin={data.image_top}
+              />
+              <div>{payment.name}</div>
             </div>
           );
         })}
