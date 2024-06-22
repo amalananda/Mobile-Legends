@@ -77,7 +77,7 @@ const MobileLegendPage = (args) => {
         <div className="form-row pt-3">
           <div className="col-lg-6">
             <p className="pl-3">No.Whatsapp</p>
-            <input type="text" name="wa" placeholder="081xxxx" className="form-control" required></input>
+            <input type="number" name="wa" placeholder="081xxxx" className="form-control" required></input>
           </div>
         </div>
         <p className="my-3">Variasi Spesial</p>

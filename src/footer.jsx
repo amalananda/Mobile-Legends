@@ -12,7 +12,11 @@ const Footer = () => {
         <ul className={"col col-${index+1}"} key={"col-${index}"}>
           {col.map((link) => (
             <li key={"link-${col}-${index}"}>
-              <img className="image-footer" src={link.image} />
+              {
+                link.image && (
+                  <img className="image-footer" src={link.image} />
+                )
+              }
               {link.label}
             </li>
           ))}
