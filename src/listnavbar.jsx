@@ -10,36 +10,33 @@ import { Link } from "react-router-dom";
 //   };
 const ListNavbar = () => {
   return (
-    <ul className="navbar-list">
+    <div className="navbar-list">
+      <div className="malls">
+        <img src="Malls_no_background.png" width="125px" />
+      </div>
       <div className="mobile-item-nav">
         <DropdownNav />
       </div>
       <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/" role="button">
+        <Link className="nav-item" to="/" role="button">
           Home
         </Link>
-      </div>
-      <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/cek_pesanan" role="button">
+        <Link className="nav-item" to="/cek_pesanan" role="button">
           Cek Pesanan
         </Link>
-      </div>
-      <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/daftar_harga" role="button">
+        <Link className="nav-item" to="/daftar_harga" role="button">
           Daftar Harga
         </Link>
-      </div>
       {/* <div className="item-nav">
         <button onClick={handleClick}>Kontak
           <div ref={ref} scrollIntoView="/footer"></div>
         </button>
       </div> */}
-      <div className="item-nav">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/login_page" role="button">
+        <Link className="nav-item" to="/login_page" role="button">
           Login
         </Link>
       </div>
-    </ul>
+    </div>
   );
 };
 

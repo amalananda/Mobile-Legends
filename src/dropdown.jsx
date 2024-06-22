@@ -9,7 +9,7 @@ function DropdownNav({ direction, ...args }) {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   return (
-    <div className="d-flex p-5">
+    <div className="drop">
       <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={direction}>
         <DropdownToggle color="black">
           <CiMenuBurger />
