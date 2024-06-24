@@ -100,7 +100,7 @@ const MetodePembayaran = ({payments}) => {
                 // width={data.image_width}
                 // margin={data.image_top}
               />
-              <div>{payment.name}</div>
+              <div className="text-pembayaran">{payment.name}</div>
             </div>
           );
         })}
