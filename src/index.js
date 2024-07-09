@@ -5,13 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./home";
-import MobileLegendPage from "./mobile_legend_page";
+import MobileLegendPage from "./mobile_legend_page/mobile_legend_page";
 import Newest from "./newest";
-import CekPesanan from "./cek_pesanan";
-import LoginPage from "./login_page";
-import Payment from "./payment_page";
-import SignUp from "./sign_up_page";
-import DaftarHarga from "./daftar_harga";
+import CekPesanan from "./cek_pesanan_page/cek_pesanan";
+import LoginPage from "./login_page/login_page";
+import Payment from "./payment_page/payment_page";
+import SignUp from "./sign_up_page/sign_up_page";
+import DaftarHarga from "./daftar_harga_page/daftar_harga";
 
 const router = createBrowserRouter([
   {
