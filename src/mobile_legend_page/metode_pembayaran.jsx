@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./metode_pembayaran.css";
 
 
 // TODO: remove when image ratio fix

@@ -1,0 +1,49 @@
+.metode-pembayaran {
+    display: flex;
+    box-sizing: border-box;
+    width: 521px;
+    border: 1px solid;
+    border-radius: 10px;
+    /* row-gap: 10px; */
+    padding: 16px 3px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-family: "Inria Serif";
+    word-break: break-word;
+    position: relative;
+    height: 86px;
+    /* min-height: 140px; */
+    border-style: solid;
+    border-width: 3px;
+    text-align: center;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    cursor: pointer;  
+  }
+
+  .meth-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .clicked-pembayaran {
+    background-color: #e3f2b2;
+  }
+  .text-pembayaran {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  .image {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
