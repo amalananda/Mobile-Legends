@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import ListNavbar from "./listnavbar";
+import ListNavbar from "../listnavbar";
 import { Container, Button } from "reactstrap";
 import MetodePembayaran from "./metode_pembayaran";
-import { ProductApi } from "./apis/productApi";
-import { PaymentApi } from "./apis/paymentApi";
-import Footer from "./footer";
-import popUp from "./pop_up";
+import { ProductApi } from "../apis/productApi";
+import { PaymentApi } from "../apis/paymentApi";
+import Footer from "../footer";
+import popUp from "../pop_up";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import Payment from "./payment_page";
+import Payment from "../payment_page/payment_page";
 import { Link } from "react-router-dom";
-import StringUtils from "./string_utilize";
+import StringUtils from "../string_utilize";
+import "./mobile_legend_page.css";
 
 // MobileLgendPage
 const MobileLegendPage = (args) => {
@@ -77,7 +78,7 @@ const MobileLegendPage = (args) => {
         <div className="form-row pt-3">
           <div className="col-lg-6">
             <p className="pl-3">No.Whatsapp</p>
-            <input type="number" name="wa" placeholder="081xxxx" className="form-control" required></input>
+            <input type="number" name="wa" placeholder="08xxxxx" className="form-control" required></input>
           </div>
         </div>
         <p className="my-3">Variasi Spesial</p>
