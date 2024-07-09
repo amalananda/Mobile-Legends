@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ListNavbar from "./listnavbar";
-import Footer from "./footer";
+import ListNavbar from "../listnavbar";
+import Footer from "../footer";
 import { Container, Button } from "reactstrap";
+import "./daftar_harga.css";
 
 const placeDaftarHarga = [
   {
@@ -36,148 +37,148 @@ const placeDaftarHarga = [
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.22.720",
+    produk_tipe: "86 diamond",
+    harga: "Rp.24.310",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.43.659",
+    produk_tipe: "172 diamond",
+    harga: "Rp.46.770",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.62.518",
+    produk_tipe: "257 diamond",
+    harga: "Rp.66.910",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.85.238",
+    produk_tipe: "343 diamond",
+    harga: "Rp.92.320",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.106.177",
+    produk_tipe: "429 diamond",
+    harga: "Rp.111.980",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.125.036",
+    produk_tipe: "514 diamond",
+    harga: "Rp.133.020",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.147.756",
+    produk_tipe: "600 diamond",
+    harga: "Rp.157.230",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.166.320",
+    produk_tipe: "706 diamond",
+    harga: "Rp.177.900",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.189.040",
+    produk_tipe: "792 diamond",
+    harga: "Rp.199.040",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.209.979",
+    produk_tipe: "878 diamond",
+    harga: "Rp.225.170",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.228.838",
+    produk_tipe: "963 diamond",
+    harga: "Rp.245.010",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.253.638",
+    produk_tipe: "1050 diamond",
+    harga: "Rp.272.740",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.272.497",
+    produk_tipe: "1135 diamond",
+    harga: "Rp.287.580",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.291.356",
+    produk_tipe: "1220 diamond",
+    harga: "Rp.311.420",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.332.640",
+    produk_tipe: "1412 diamond",
+    harga: "Rp.355.200",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.376.299",
+    produk_tipe: "1584 diamond",
+    harga: "Rp.386.299",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.395.158",
+    produk_tipe: "1669 diamond",
+    harga: "Rp.422.610",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.419.958",
+    produk_tipe: "1756 diamond",
+    harga: "Rp.449.340",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.438.817",
+    produk_tipe: "1841 diamond",
+    harga: "Rp.469.180",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.502.821",
+    produk_tipe: "2195 diamond",
+    harga: "Rp.538.830",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.590.139",
+    produk_tipe: "2539 diamond",
+    harga: "Rp.623.970",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.669.141",
+    produk_tipe: "2901 diamond",
+    harga: "Rp.730.430",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.712.800",
+    produk_tipe: "3073 diamond",
+    harga: "Rp.765.010",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.838.728",
+    produk_tipe: "3688 diamond",
+    harga: "Rp.895.444",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.1.005.048",
+    produk_tipe: "4394 diamond",
+    harga: "Rp.1.079.040",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.1.262.220",
+    produk_tipe: "1532 diamond",
+    harga: "Rp.1.350.607",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.1.431.540",
+    produk_tipe: "6238 diamond",
+    harga: "Rp.1.536.202",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.1.768.041",
+    produk_tipe: "7727 diamond",
+    harga: "Rp.1.895.433",
   },
   {
     nama_game: "mobile legend",
-    produk_tipe: "diamond",
-    harga: "Rp.2.102.463  ",
+    produk_tipe: "9288 diamond",
+    harga: "Rp.2.254.499  ",
   },
 ];
 
