@@ -1,8 +1,9 @@
 import { useState } from "react";
-import ListNavbar from "./listnavbar";
-import Footer from "./footer";
+import ListNavbar from "../listnavbar";
+import Footer from "../footer";
 import { Container, Button, Modal, ModalBody, ModalFooter, ModalHeader, Alert } from "reactstrap";
 import { Link } from "react-router-dom";
+import "./login_page.css";
 
 const database = [
   {
