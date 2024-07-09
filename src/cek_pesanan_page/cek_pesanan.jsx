@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ListNavbar from "./listnavbar";
-import Footer from "./footer";
+import ListNavbar from "../listnavbar";
+import Footer from "../footer";
 import { Container, Button } from "reactstrap";
+import "./cek_pesanan_page.css";
 
 const CekPesanan = () => {
   const [clickedId, setClickedId] = useState("");

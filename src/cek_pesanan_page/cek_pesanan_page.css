@@ -1,0 +1,31 @@
+.form-pes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    font-family: "Inria Serif"
+  }
+  .wrappedform {
+    margin-top: 50px;
+    /* margin-left: 150px; */
+    margin-bottom: 100px;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    background-color: #e8e8e8;
+    border-radius: 10px;
+  }
+  
+  .form-control {
+    order: 1;
+  }
+
+  .button-cekpesanan {
+    width: 150px;
+    margin-top: 20px;
+    background-color: #a7d397;
+    display: block;
+    float: right;
+  }
