@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import "./game_page.css";
 
 const gameHolder = [
   {
