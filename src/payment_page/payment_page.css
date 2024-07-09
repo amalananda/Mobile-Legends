@@ -1,0 +1,100 @@
+.collabs-row {
+    background-color: #a7d397;
+    border-radius: 10px;
+  }
+  
+  .collabs-row .first-row {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .collabs-row .second-row {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .card-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .time-section {
+    display: inline-block;
+    margin-left: 40px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+  }
+  
+  .time-section:first-child {
+    margin-left: 0;
+  }
+  
+  img.image-footer {
+    aspect-ratio: 1 / 1;
+    margin-top: 10px;
+  }
+  
+  p.text-footer {
+    font-family: "Inria Serif";
+    font-size: 10px;
+    color: #b6e90e;
+  }
+  .time-section > .value {
+    background-color: #212222;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 70px;
+    color: #fff;
+    line-height: 100px;
+    text-align: center;
+  }
+
+  .time-label {
+    font-size: 11px;
+    padding-top: 4px;
+    text-align: center;
+  }
+
+  .scan-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .info-row {
+    display: block;
+    background-color: #a7d397;
+    border-radius: 10px;
+    margin: 0 0 0px 0;
+  }
+
+  .first-info header {
+    display: flex;
+    margin: 10px 0 20px 10px;
+    /* margin-left: 10px; */
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+  }
+
+  .second-info {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cara-row {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ListNavbar from "./listnavbar";
+import ListNavbar from "../listnavbar";
 import { Container, Button } from "reactstrap";
-import Footer from "./footer";
+import Footer from "../footer";
 import { Link } from "react-router-dom";
-import { useCountdown } from "./use_count_down";
+import { useCountdown } from "../use_count_down";
+import "./payment_page.css";
+
 const defaultcountDown = new Date().setTime(new Date().getTime() + 1 * 60 * 60 * 1000);
 
 const Payment = () => {
