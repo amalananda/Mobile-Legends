@@ -1,8 +1,9 @@
 import { useState } from "react";
-import ListNavbar from "./listnavbar";
-import Footer from "./footer";
+import ListNavbar from "../listnavbar";
+import Footer from "../footer";
 import { Container, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import "./sign_up_page.css";
 
 const SignUp = () => {
   return (

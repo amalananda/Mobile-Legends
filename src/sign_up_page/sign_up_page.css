@@ -1,0 +1,72 @@
+.form-sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .signup-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 440px;
+    height: 480px;
+    padding: 30px;
+    border-radius: 10%;
+    background-color: #a7d397;
+    border: none;
+  }
+  
+  .signup-box header {
+    text-align: center;
+    margin: 10px 0 40px 0;
+    font-size: 30px;
+    font-style: initial;
+    font-weight: 500;
+  }
+  
+  .signup-box .input-field {
+    width: 100%;
+    height: 60%;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 25px;
+    border-radius: 10%;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(91, 29, 236, 0.05);
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .input-submit {
+    position: relative;
+  }
+
+  .submit-btn {
+    width: 100%;
+    height: 50px;
+    background: #212222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .submit-btn:hover {
+    background: #a7d397;
+    transform: scale(1.05, 1);
+  }
+
+  @media screen and (max-width: 640px) {
+    .signup-box {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 300px;
+        height: 340px;
+        padding: 30px;
+        border-radius: 10%;
+        background-color: #a7d397;
+        border: none;
+      }
+    }    
