@@ -19,7 +19,7 @@ const MobileLegendCard = () => {
           return (
             <Link style={{ textDecoration: "none", color: "black" }} to={`/mobile_legend`}>
               <div onClick={() => setClickedId(`${data.nama_game}-id`)}>
-                <img className="mobilelegend" src="Mobile-Legend.jpg" width="125px" />
+                <img className="mobilelegend" src="Mobile_Legend.png" width="125px"/>
                 <div> {data.nama_game}</div>
               </div>
             </Link>
