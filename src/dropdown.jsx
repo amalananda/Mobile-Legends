@@ -24,9 +24,9 @@ function DropdownNav({ direction, ...args }) {
           <DropdownItem href="/daftar_harga" role="button">
             Daftar Harga
           </DropdownItem>
-          <DropdownItem href="/newest" role="button">
+          {/* <DropdownItem href="/newest" role="button">
             Kontak
-          </DropdownItem>
+          </DropdownItem> */}
           <DropdownItem href="/login_page" role="button">
             Login
           </DropdownItem>
