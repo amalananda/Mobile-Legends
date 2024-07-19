@@ -103,15 +103,39 @@
 
 .footer-links {
   width: 100%;
-  display: grid;
+  display: flex;
   row-gap: 2rem;
   background-color: black;
   padding: 1rem 1.5rem;
-  position: relative;
+  /* position: relative; */
   color: white;
   bottom: 0px;
   z-index: 1;
   font-family: "Inria Serif"
+}
+
+.col {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: inline-block;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.image-footer {
+  margin-right: 10px;
 }
 
 .App {
@@ -121,6 +145,49 @@
   justify-content: center; */
   position: relative;
 }
+
+.header-modal {
+  color: #FF0000;
+  font-weight: bolder;
+}
+
+.body-modal {
+  background-color: #E9FF97;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-links {
+    text-align: center;
+  } 
+  .col {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+  .contact-header {
+    font-weight: bold;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    white-space: nowrap;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  .image-footer {
+    margin-right: 10px;
+  }
+  
+}
+
 
 @media only screen and (min-width: 320px) {
   .container {
