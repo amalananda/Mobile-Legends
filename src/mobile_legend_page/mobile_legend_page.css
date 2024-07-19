@@ -24,18 +24,6 @@
     margin-right: auto;
   }
   
-  .button-beli {
-    width: 150px;
-    margin-top: 15px;
-    background-color: #a7d397;
-    margin-bottom: 20px;
-  }
-  
-  .button-beli.btn.btn-secondary {
-    background-color: #a7d397;
-    font-family: "Inria Serif";
-  }
-
   .card-1 {
     box-sizing: border-box;
     width: 150px;
@@ -113,4 +101,18 @@
     color: #b6e90e;
     word-break: break-all;
   }
-  
+.btn-secondary {
+  background-color: #a7d397;
+  font-family: "Inria Serif";
+  width: 150px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
