@@ -8,15 +8,13 @@ const Footer = () => {
   ];
   return (
     <div className="footer-links">
-      {links.map((col) => (
-        <ul className={"col col-${index+1}"} key={"col-${index}"}>
+      {links.map((col, index) => (
+        <ul className={`col col-${index+1}`} key={`col-${index}`}>
           {col.map((link) => (
-            <li key={"link-${col}-${index}"}>
-              {
-                link.image && (
-                  <img className="image-footer" src={link.image} />
-                )
-              }
+            <li key={`link-${link.key}`} className={link.image ? "contact-item" : "contact-header"}>
+              {link.image && (
+                <img className="image-footer" src={link.image} alt="" />
+              )}
               {link.label}
             </li>
           ))}
