@@ -5,6 +5,7 @@ import ListNavbar from "./listnavbar";
 import "bootstrap/dist/css/bootstrap.css";
 import MobileLegendCard from "./game_page/game";
 import Footer from "./footer";
+import GenshinImpactCard from "./genshin_impact_page/genshin_impact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ListNavbar />
       {/* change into MobileLegendCard */}
       <MobileLegendCard />
+      <GenshinImpactCard/>
       <Footer />
     </div>
   );

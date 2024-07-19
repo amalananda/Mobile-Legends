@@ -12,6 +12,7 @@ import LoginPage from "./login_page/login_page";
 import Payment from "./payment_page/payment_page";
 import SignUp from "./sign_up_page/sign_up_page";
 import DaftarHarga from "./daftar_harga_page/daftar_harga";
+import GenshinImpactPage from "./genshin_impact_page/genshin_impact_page";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/mobile_legend",
     element: <MobileLegendPage />,
+  },
+  {
+    path: "/genshin_impact",
+    element: <GenshinImpactPage />
   },
   {
     path: "/newest",
