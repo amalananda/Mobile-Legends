@@ -1,33 +1,105 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import Payment from "./payment_page/payment_page"
+import { Link } from "react-router-dom";
 
-function popUp(args) {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
+function PopUp({ show, onClose }) {
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>
-        Beli
-      </Button>
-      <Modal isOpen={modal} toggle={toggle} {...args}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-            Do Something
-          </Button>{" "}
-          <Button color="secondary" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
-    </div>
+    <Modal isOpen={show} toggle={onClose}>
+      <ModalHeader toggle={onClose}>Detail Pesanan</ModalHeader>
+      <ModalBody>
+        Mohon konfirmasi Username anda sudah benar.
+        <div className="order-info_row">
+          <div className="first-col">Nickname:</div>
+          <div className="second-col">HYDE</div>
+        </div>
+        <div className="order-info_row">
+          <div className="first-col">ID:</div>
+          <div className="second-col">36277462(2052)</div>
+        </div>
+        <div className="order-info_row">
+          <div className="first-col">Bayar dengan:</div>
+          <div className="second-col">QRIS</div>
+        </div>
+        <div className="order-info_row">
+          <div className="first-col">Harga:</div>
+          <div className="second-col">Rp.15.200</div>
+        </div>
+        <div className="order-info_row">
+          <div className="first-col">Pajak:(11%)</div>
+          <div className="second-col">Rp.1.672</div>
+        </div>
+        <div className="order-info_row">
+          <div className="first-col">Total:</div>
+          <div className="second-col">Rp.16.872</div>
+        </div>
+      </ModalBody>
+      <ModalFooter>
+        <Button color="first">
+          <Link style={{ textDecoration: "none", color: "black" }} to={`/payment_page`}>
+            Confirm
+          </Link>
+        </Button>
+        <Button color="second" onClick={onClose}>
+          Cancel
+        </Button>
+      </ModalFooter>
+    </Modal>
   );
 }
 
-export default popUp;
+// function PopUp(args) {
+//   const [modal, setModal] = useState(false);
+
+//   const toggle = () => setModal(!modal);
+
+//   return (
+//     <div>
+//       <Button onClick={toggle}>
+//         Beli
+//       </Button>
+//       <Modal isOpen={modal} toggle={toggle} {...args}>
+//         <ModalHeader toggle={toggle}>Detail Pesanan</ModalHeader>
+//         <ModalBody>
+//             Mohon konfirmasi Username anda sudah benar.
+//             <div className="order-info_row">
+//               <div className="first-col">Nickname:</div>
+//               <div className="second-col">HYDE</div>
+//             </div>
+//             <div className="order-info_row">
+//               <div className="first-col">ID:</div>
+//               <div className="second-col">36277462(2052)</div>
+//             </div>
+//             <div className="order-info_row">
+//               <div className="first-col">Bayar dengan:</div>
+//               <div className="second-col">QRIS</div>
+//             </div>
+//             <div className="order-info_row">
+//               <div className="first-col">Harga:</div>
+//               <div className="second-col">Rp.15.200</div>
+//             </div>
+//             <div className="order-info_row">
+//               <div className="first-col">Pajak:(11%)</div>
+//               <div className="second-col">Rp.1.672</div>
+//             </div>
+//             <div className="order-info_row">
+//               <div className="first-col">Total:</div>
+//               <div className="second-col">Rp.16.872</div>
+//             </div>
+//           </ModalBody>
+//           <ModalFooter>
+//             <Button color="first" onClick={toggle}>
+//               <Link style={{ textDecoration: "none", color: "black" }} to={`/payment_page`}>
+//                 Confirm
+//               </Link>
+//             </Button>
+//             <Button color="second" onClick={toggle}>
+//               Cancel
+//             </Button>
+//           </ModalFooter>
+//       </Modal>
+//     </div>
+//   );
+// }
+
+export default PopUp;
