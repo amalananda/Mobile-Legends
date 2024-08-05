@@ -9,10 +9,11 @@ const CekPesanan = () => {
   return (
     <>
       <ListNavbar />
+      <div className="page">
       <Container>
         <div className="form-pes pt-3">
           <div className="col-lg-7">
-            <p>Cek Status Pesanan</p>
+            {/* <p>Cek Status Pesanan</p> */}
             <div className="wrappedform">
               <div className="numberform">
                 <p className="pes-3">No.Pesanan</p>
@@ -23,6 +24,7 @@ const CekPesanan = () => {
           </div>
         </div>
       </Container>
+      </div>
       <Footer />
     </>
   );

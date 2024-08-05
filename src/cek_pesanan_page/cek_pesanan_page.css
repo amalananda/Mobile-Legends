@@ -16,6 +16,7 @@
     box-sizing: border-box;
     background-color: #e8e8e8;
     border-radius: 10px;
+    box-shadow: 0 2px 5px;
   }
   
   .form-control {
@@ -25,7 +26,21 @@
   .button-cekpesanan {
     width: 150px;
     margin-top: 20px;
-    background-color: #a7d397;
+    background-color: #000000;
     display: block;
     float: right;
   }
+
+  @media screen and (max-width: 727px) {
+    .wrappedform {
+        flex-direction: column;
+        width: 200px;
+        padding: 25px;
+        background-color: #a7d397;
+        border: none;
+    }
+    .td {
+        font-size: 9px;
+    }
+ } 
+  
