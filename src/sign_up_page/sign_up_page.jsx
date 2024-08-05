@@ -9,6 +9,7 @@ const SignUp = () => {
   return (
     <>
       <ListNavbar />
+      <div className="page">
       <Container>
         <div className="form-sign pt-3">
           <div className="col-lg-4">
@@ -27,7 +28,7 @@ const SignUp = () => {
               <div className="input-submit">
                 <button className="submit-btn" id="submit"></button>
                 <label for="submit">
-                  <Link style={{ textDecoration: "none", color: "white" }} to={`/login_page`}>
+                  <Link style={{ textDecoration: "none", color: "black" }} to={`/login_page`}>
                     Sign In
                   </Link>
                 </label>
@@ -36,6 +37,7 @@ const SignUp = () => {
           </div>
         </div>
       </Container>
+      </div>
       <Footer />
     </>
   );
