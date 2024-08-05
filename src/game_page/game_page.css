@@ -4,23 +4,26 @@
     text-decoration: none;
     box-sizing: border-box;
     width: 150px;
-    border: 1px solid;
+    border: 1px solid #FAF7F7;;
     border-radius: 10px;
+    box-shadow: 0 2px 5px;
     row-gap: 10px;
     padding: 16px 3px;
     align-items: center;
     justify-content: center;
     font-size: 0.875rem;
     font-family: "Inria Serif";  
+    font-weight: 500;
     word-break: break-word;
     position: relative;
     height: 150px;
     min-height: 140px;
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
     text-align: center;
     margin-right: 15px;
     margin-top: 230px !important;
     text-align: center;
     margin: auto;
+    background-color: white;
 }
