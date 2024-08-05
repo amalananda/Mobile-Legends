@@ -19,7 +19,13 @@
     float: right;
   }
 
+  .col-lg-7 {
+    display: flex;
+    justify-content: center;
+  }
+
   .wrappedform {
+    
     margin-top: 50px;
     /* margin-left: 150px; */
     margin-bottom: 100px;
@@ -28,21 +34,19 @@
     padding-right: 30px;
     padding-bottom: 80px;
     box-sizing: border-box;
-    background-color: #e8e8e8;
+    background-color: #a7d397;
     border-radius: 10px;
+    box-shadow: 0 2px 5px;
   }
-
   .table {
     margin-right: 100px;
   }
 
- @media screen and (min-width: 425px) {
+ @media screen and (max-width: 727px) {
     .wrappedform {
-        display: flex;
-        justify-content: center;
         flex-direction: column;
-        width: 300px;
-        padding: 30px;
+        width: 200px;
+        padding: 25px;
         background-color: #a7d397;
         border: none;
     }

@@ -191,6 +191,7 @@ const DaftarHarga = () => {
   return (
     <>
       <ListNavbar />
+      <div className="page">
       <Container>
         <div className="form-daf pt-3">
           <div className="col-lg-7">
@@ -231,6 +232,7 @@ const DaftarHarga = () => {
           </div>
         </div>
       </Container>
+      </div>
       <Footer />
     </>
   );
