@@ -143,11 +143,12 @@ const MobileLegendPage = (args) => {
   return (
     <>
       <ListNavbar />
+      <div className="page">
       <Container>
         <PopupTimer show={showPopUp} />
         <Form>
           <FormGroup>
-            <Label for="user_id">User ID</Label>
+            <Label className="label-page" for="user_id" >User ID</Label>
             <Input
               type="number"
               name="user_id"
@@ -230,6 +231,7 @@ const MobileLegendPage = (args) => {
         </Form>
         <PopUp show={showPopUp} onClose={handleClosePopUp} />
       </Container>
+      </div>
       <Footer />
     </>
   );
