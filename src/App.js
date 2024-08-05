@@ -12,8 +12,10 @@ function App() {
     <div className="App">
       <ListNavbar />
       {/* change into MobileLegendCard */}
-      <MobileLegendCard />
-      <GenshinImpactCard/>
+      <div className="card-game">
+        <MobileLegendCard />
+        <GenshinImpactCard/>
+      </div>
       <Footer />
     </div>
   );
