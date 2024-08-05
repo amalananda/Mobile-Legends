@@ -3,6 +3,7 @@ import { Container, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./genshin_impact.css";
 
+
 const gameHolder = [
   {
     nama_game: "Genshin Impact",
@@ -14,7 +15,7 @@ const GenshinImpactCard = () => {
 
   return (
     <Container>
-      <div className="game-flex">
+      <div className="game-genshin">
         {gameHolder.map((data) => {
           return (
             <Link style={{ textDecoration: "none", color: "black" }} to={`/genshin_impact`}>
