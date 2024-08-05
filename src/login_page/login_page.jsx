@@ -66,6 +66,7 @@ const LoginPage = () => {
   return (
     <>
       <ListNavbar />
+      <div className="page">
       <Container>
         <div className="form-log pt-3">
           <div className="col-lg-4 mx-auto">
@@ -107,6 +108,7 @@ const LoginPage = () => {
           </div>
         </div>
       </Container>
+      </div>
       <Footer />
     </>
   );
