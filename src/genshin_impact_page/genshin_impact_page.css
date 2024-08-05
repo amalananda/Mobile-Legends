@@ -1,0 +1,124 @@
+.pl-3 {
+    margin-top: 20px;
+    font-family: "Inria Serif";
+  }
+  
+  /* .my-3 {
+    font-family: "Inria Serif";
+  } */
+  
+.label-page {
+  margin-top: 15px;
+}
+
+  .cads-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .crystal {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .moon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card-2 {
+    box-sizing: border-box;
+    width: 150px;
+    border: 1px solid;
+    border-radius: 10px;
+    row-gap: 10px;
+    padding: 16px 3px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-family: sans-serif;
+    word-break: break-word;
+    position: relative;
+    height: 150px;
+    min-height: 140px;
+    border-style: solid;
+    border-width: 3px;
+    text-align: center;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  .card-moon {
+    box-sizing: border-box;
+    /* width: 150px; */
+    border: 1px solid;
+    border-radius: 10px;
+    row-gap: 10px;
+    padding: 16px 3px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-family: sans-serif;
+    word-break: break-word;
+    position: relative;
+    height: 200px;
+    min-height: 140px;
+    border-style: solid;
+    border-width: 3px;
+    text-align: center;
+    width: 150px;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  .clicked-crystal {
+    background-color: #e3f2b2;
+  }
+
+  .form-control {
+    order: 1;
+  }
+  
+  .form-control.zone-input {
+    order: 1;
+  }
+  
+  .order-info_row {
+    display: flex;
+    padding: 8px;
+    font-family: sans-serif;
+  }
+  
+  .order-info_row .first-col {
+    color: #b6e90e;
+    width: 40%;
+    align-self: center;
+  }
+  
+  .order-info_row .second-col {
+    padding-left: 20px;
+    width: 59%;
+    color: #b6e90e;
+    word-break: break-all;
+  }
+/* .btn-secondary {
+  background-color: #a7d397;
+  font-family: "Inria Serif";
+  width: 150px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+} */
+
+@media only screen and (max-width: 767px) {
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
