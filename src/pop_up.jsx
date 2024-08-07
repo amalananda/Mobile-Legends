@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import React, { useState } from "react"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 import Payment from "./payment_page/payment_page"
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-function PopUp({ show, onClose }) {
+function PopUp({ show, onClose, chosenProduct }) {
   return (
     <Modal isOpen={show} toggle={onClose}>
       <ModalHeader toggle={onClose}>Detail Pesanan</ModalHeader>
@@ -11,7 +11,8 @@ function PopUp({ show, onClose }) {
         Mohon konfirmasi Username anda sudah benar.
         <div className="order-info_row">
           <div className="first-col">Nickname:</div>
-          <div className="second-col">HYDE</div>
+          <div className="second-col">{chosenProduct.result.username}</div>
+
         </div>
         <div className="order-info_row">
           <div className="first-col">ID:</div>
@@ -45,7 +46,7 @@ function PopUp({ show, onClose }) {
         </Button>
       </ModalFooter>
     </Modal>
-  );
+  )
 }
 
 // function PopUp(args) {
@@ -102,4 +103,4 @@ function PopUp({ show, onClose }) {
 //   );
 // }
 
-export default PopUp;
+export default PopUp

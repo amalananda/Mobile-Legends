@@ -12,11 +12,12 @@ import { Link } from "react-router-dom"
 import StringUtils from "../string_utilize"
 import "./mobile_legend_page.css"
 import PopupTimer from "../popup_timer"
+import { OrderApi } from '../apis/orderApi'
 
 // MobileLgendPage
 const MobileLegendPage = (args) => {
   const [clickedId, setClickedId] = useState(null)
-  const [chosenProduct, setChosenProduct] = useState(null)
+  const [chosenProduct, setChosenProduct] = useState({ result: { username: '' } })
   const [specialProducts, setSpecialProducts] = useState([])
 
   const [diamondProducts, setDiamondProducts] = useState([])
@@ -131,7 +132,18 @@ const MobileLegendPage = (args) => {
     // Your click handling logic
   }
 
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
+    const payload = {
+      id: form.user_id,
+      zone: form.zone_id
+    }
+    await OrderApi.checkout(payload)
+      .then((response) => {
+        console.log(response.data)
+        setChosenProduct(response.data)
+      })
+      .catch((error) => console.log(error))
+
     if (validateForm()) {
       setShowPopUp(true)
     }
@@ -230,7 +242,11 @@ const MobileLegendPage = (args) => {
               {"Beli"}
             </Button>
           </Form>
-          <PopUp show={showPopUp} onClose={handleClosePopUp} />
+          <PopUp
+            chosenProduct={chosenProduct}
+            show={showPopUp}
+            onClose={handleClosePopUp}
+          />
         </Container>
       </div>
       <Footer />
