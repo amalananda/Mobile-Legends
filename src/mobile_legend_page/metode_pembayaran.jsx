@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./metode_pembayaran.css";
+import React, { useState } from "react"
+import "./metode_pembayaran.css"
 
 
 // TODO: remove when image ratio fix
@@ -76,38 +76,45 @@ const placeMetodePembayaran = [
     image_height: "40px",
     image_widht: "45px",
   },
-];
+]
 
-const MetodePembayaran = ({payments}) => {
-  const [clickedId, setClickedId] = useState("");
+const MetodePembayaran = ({ payments, onPaymentSelect }) => {
+  const [clickedId, setClickedId] = useState("")
+
+  const handlePaymentClick = (payment) => {
+    setClickedId(payment.id)
+    if (onPaymentSelect) {
+      onPaymentSelect(payment)  // Set selected payment in MobileLegendPage
+    }
+  }
 
   return (
     <>
       <p className="my-3">Metode Pembayaran</p>
       <div className="meth-flex">
-        {payments .map((payment) => {
+        {payments.map((payment) => {
           return (
             <div
-              key={`${payment.id}`}
-              id={`${payment.id}`}
-              className={clickedId == `${payment.name}-id` ? "metode-pembayaran clicked-pembayaran" : "metode-pembayaran"}
+              key={payment.id}
+              id={payment.id}
+              className={clickedId === payment.id ? "metode-pembayaran clicked-pembayaran" : "metode-pembayaran"}
               button
-              onClick={() => setClickedId(`${payment.name}-id`)}
+              onClick={() => handlePaymentClick(payment)}
             >
               <img
                 className="image"
                 src={payment.image_url}
-                // height={data.image_height}
-                // width={data.image_width}
-                // margin={data.image_top}
+              // height={data.image_height}
+              // width={data.image_width}
+              // margin={data.image_top}
               />
               <div className="text-pembayaran">{payment.name}</div>
             </div>
-          );
+          )
         })}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MetodePembayaran;
+export default MetodePembayaran

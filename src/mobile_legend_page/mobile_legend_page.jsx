@@ -19,7 +19,7 @@ const MobileLegendPage = (args) => {
   const [clickedId, setClickedId] = useState(null)
   const [chosenProduct, setChosenProduct] = useState({ result: { username: '' } })
   const [specialProducts, setSpecialProducts] = useState([])
-
+  const [selectedPayment, setSelectedPayment] = useState(null)
   const [diamondProducts, setDiamondProducts] = useState([])
   const [payments, setPayments] = useState([])
   const [modal, setModal] = useState(false)
@@ -237,7 +237,7 @@ const MobileLegendPage = (args) => {
                 </div>
               ))}
             </div>
-            < MetodePembayaran payments={payments} />
+            < MetodePembayaran payments={payments} onPaymentSelect={setSelectedPayment} />
             <Button className="button-beli" onClick={handleButtonClick} disabled={isDisabled}>
               {"Beli"}
             </Button>
@@ -246,6 +246,9 @@ const MobileLegendPage = (args) => {
             chosenProduct={chosenProduct}
             show={showPopUp}
             onClose={handleClosePopUp}
+            user_id={form.user_id}
+            zone_id={form.zone_id}
+            payment_method={selectedPayment ? selectedPayment.name : 'Metode Pembayaran Tidak Dipilih'}
           />
         </Container>
       </div>

@@ -3,7 +3,9 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 import Payment from "./payment_page/payment_page"
 import { Link } from "react-router-dom"
 
-function PopUp({ show, onClose, chosenProduct }) {
+function PopUp({ show, onClose, chosenProduct, user_id, zone_id, payment_method }) {
+  const username = chosenProduct?.result?.username || 'Username Tidak Ditemukan'
+
   return (
     <Modal isOpen={show} toggle={onClose}>
       <ModalHeader toggle={onClose}>Detail Pesanan</ModalHeader>
@@ -11,24 +13,19 @@ function PopUp({ show, onClose, chosenProduct }) {
         Mohon konfirmasi Username anda sudah benar.
         <div className="order-info_row">
           <div className="first-col">Nickname:</div>
-          <div className="second-col">{chosenProduct.result.username}</div>
-
+          <div className="second-col">{username}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">ID:</div>
-          <div className="second-col">36277462(2052)</div>
+          <div className="second-col">{user_id}</div>
+        </div>
+        <div className="order-info_row">
+          <div className="first-col">Zone ID:</div>
+          <div className="second-col">{zone_id}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">Bayar dengan:</div>
-          <div className="second-col">QRIS</div>
-        </div>
-        <div className="order-info_row">
-          <div className="first-col">Harga:</div>
-          <div className="second-col">Rp.15.200</div>
-        </div>
-        <div className="order-info_row">
-          <div className="first-col">Pajak:(11%)</div>
-          <div className="second-col">Rp.1.672</div>
+          <div className="second-col">{payment_method}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">Total:</div>
