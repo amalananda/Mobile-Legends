@@ -3,7 +3,13 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 import Payment from "./payment_page/payment_page"
 import { Link } from "react-router-dom"
 
-function PopUp({ show, onClose, chosenProduct, user_id, zone_id, payment_method }) {
+function PopUp({
+  show,
+  onClose,
+  chosenProduct,
+  form,
+  paymentMethodName
+}) {
   const username = chosenProduct?.result?.username || 'Username Tidak Ditemukan'
 
   return (
@@ -17,15 +23,15 @@ function PopUp({ show, onClose, chosenProduct, user_id, zone_id, payment_method 
         </div>
         <div className="order-info_row">
           <div className="first-col">ID:</div>
-          <div className="second-col">{user_id}</div>
+          <div className="second-col">{form.user_id}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">Zone ID:</div>
-          <div className="second-col">{zone_id}</div>
+          <div className="second-col">{form.zone_id}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">Bayar dengan:</div>
-          <div className="second-col">{payment_method}</div>
+          <div className="second-col">{paymentMethodName}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">Total:</div>
