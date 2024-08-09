@@ -1,43 +1,46 @@
 import React, { useState, useEffect } from "react"
 import ListNavbar from "../listnavbar"
-import { Container, Button, Form, FormGroup, Label, Input, FormText } from "reactstrap"
+import {
+  Container,
+  Button,
+  Form
+} from "reactstrap"
 import MetodePembayaran from "./metode_pembayaran"
 import { ProductApi } from "../apis/productApi"
 import { PaymentApi } from "../apis/paymentApi"
 import Footer from "../footer"
 import PopUp from "../pop_up"
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
-import Payment from "../payment_page/payment_page"
-import { Link } from "react-router-dom"
 import StringUtils from "../string_utilize"
-import "./mobile_legend_page.css"
 import PopupTimer from "../popup_timer"
 import { OrderApi } from '../apis/orderApi'
 import MobileLegendForm from './mobile_legend_form'
+import "./mobile_legend_page.css"
+
+const defaultInputFields = {
+  user_id: '',
+  zone_id: '',
+  wa: ''
+}
+
+const defaultChosenProduct = {
+  username: '',
+  product_price: '',
+  payment_method: ''
+}
 
 // MobileLgendPage
 const MobileLegendPage = (args) => {
   const [clickedId, setClickedId] = useState(null)
-  const [chosenProduct, setChosenProduct] = useState({ result: { username: '' } })
+  const [chosenProduct, setChosenProduct] = useState(defaultChosenProduct)
   const [specialProducts, setSpecialProducts] = useState([])
-  const [selectedPayment, setSelectedPayment] = useState(null)
+  const [selectedPayment, setSelectedPayment] = useState({ name: 'Metode Pembayaran Tidak Dipilih' })
   const [diamondProducts, setDiamondProducts] = useState([])
   const [payments, setPayments] = useState([])
   const [modal, setModal] = useState(false)
   const [isDisabled, setIsDisabled] = useState(false)
-  const [isTimerExpired, setIsTimerExpired] = useState(false)
   const [showPopUp, setShowPopUp] = useState(false)
-  const [form, setForm] = useState({
-    user_id: '',
-    zone_id: '',
-    wa: ''
-  })
-  const [errors, setErrors] = useState({
-    user_id: '',
-    zone_id: '',
-    wa: ''
-  })
-  const toggle = () => setModal(!modal)
+  const [form, setForm] = useState(defaultInputFields)
+  const [errors, setErrors] = useState(defaultInputFields)
 
   useEffect(() => {
     const specialProductParams = {
@@ -72,20 +75,20 @@ const MobileLegendPage = (args) => {
   useEffect(() => {
     const checkTime = () => {
       const currentTime = new Date()
-      const currentHour = currentTime.getHours()
 
       // Adjust the time to WIB (GMT+7)
       const currentWIBTime = new Date(currentTime.getTime() + (currentTime.getTimezoneOffset() + 420) * 60000)
       const currentWIBHour = currentWIBTime.getHours()
 
+      const isDeactiveTime = currentWIBHour >= 24 || currentWIBHour < 8
+
       // Set disable time range (23:00 to 08:00 WIB)
-      if (currentWIBHour >= 24 || currentWIBHour < 8) {
+      if (isDeactiveTime) {
         setIsDisabled(true)
       } else {
         setIsDisabled(false)
       }
     }
-
 
     // Check time initially
     checkTime()
@@ -99,14 +102,20 @@ const MobileLegendPage = (args) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setForm({ ...form, [name]: value })
+    setForm({
+      ...form,
+      [name]: value
+    })
     // Clear the error message for the field being edited
-    setErrors({ ...errors, [name]: '' })
+    setErrors({
+      ...errors,
+      [name]: ''
+    })
   }
 
   const validateForm = () => {
     let valid = true
-    const newErrors = { user_id: '', zone_id: '', wa: '' }
+    const newErrors = defaultInputFields
 
     if (!form.user_id) {
       newErrors.user_id = 'Please fill out this field'
@@ -127,17 +136,16 @@ const MobileLegendPage = (args) => {
     return valid
   }
 
-  const hanldeClickProduct = (id, card_Id) => {
-    if (isDisabled) return // Disable click if within disable time range
-    setClickedId(card_Id) // Assuming you have a function like this
-    // Your click handling logic
-  }
-
   const handleButtonClick = async () => {
     const payload = {
       id: form.user_id,
-      zone: form.zone_id
+      zone: form.zone_id,
+      product_id: '',
+      payment_id: selectedPayment.id
+
     }
+
+
     await OrderApi.checkout(payload)
       .then((response) => {
         console.log(response.data)
@@ -169,7 +177,7 @@ const MobileLegendPage = (args) => {
 
             {/* List of Price Products */}
             {/* Variant */}
-            <p className="my-3">Variasi Spesial</p>
+            <p className="my-3">{'Variasi Spesial'}</p>
             <div className="cads-flex">
               {specialProducts.map((data) => (
                 <div
@@ -178,7 +186,11 @@ const MobileLegendPage = (args) => {
                   onClick={() => !isDisabled && setClickedId(`${data.id}-product`)}
                   style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
                 >
-                  <img className="twilightpass" src="TwilightPass_MLBB.png" width="75px" />
+                  <img
+                    className="twilightpass"
+                    src="TwilightPass_MLBB.png"
+                    width="75px"
+                  />
                   <div>{data.name}</div>
                   <div>{StringUtils.format_rupiah(data.selling_price)}</div>
                 </div>
@@ -187,7 +199,7 @@ const MobileLegendPage = (args) => {
 
 
             {/* Diamond  */}
-            <p className="my-3">Variasi Instan</p>
+            <p className="my-3">{'Variasi Instan'}</p>
             <div className="cads-flex">
               {diamondProducts.map((data) => (
                 <div
@@ -196,7 +208,11 @@ const MobileLegendPage = (args) => {
                   onClick={() => !isDisabled && setClickedId(`${data.id}-product`)}
                   style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
                 >
-                  <img className="diamonds" src="Diamonds.png" width="50px" />
+                  <img
+                    className="diamonds"
+                    src="Diamonds.png"
+                    width="50px"
+                  />
                   <div>{data.name}</div>
                   <div>{StringUtils.format_rupiah(data.selling_price)}</div>
                 </div>
@@ -219,9 +235,8 @@ const MobileLegendPage = (args) => {
             chosenProduct={chosenProduct}
             show={showPopUp}
             onClose={handleClosePopUp}
-            user_id={form.user_id}
-            zone_id={form.zone_id}
-            payment_method={selectedPayment ? selectedPayment.name : 'Metode Pembayaran Tidak Dipilih'}
+            form={form}
+            paymentMethodName={selectedPayment.name}
           />
         </Container>
       </div>
