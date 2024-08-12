@@ -9,7 +9,9 @@ export const OrderApi = {
   checkout: async (params) => {
     const request = {
       id: params.id,
-      zone: params.zone
+      zone: params.zone,
+      product_id: params.product_id,
+      payment_id: params.payment_id
     }
 
     const path = [PATH, '/checkout'].join('')
