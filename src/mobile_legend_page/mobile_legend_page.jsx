@@ -136,25 +136,38 @@ const MobileLegendPage = (args) => {
     return valid
   }
 
-  const handleButtonClick = async () => {
-    const payload = {
-      id: form.user_id,
-      zone: form.zone_id,
-      product_id: '',
-      payment_id: selectedPayment.id
-
-    }
-
-
-    await OrderApi.checkout(payload)
-      .then((response) => {
-        console.log(response.data)
-        setChosenProduct(response.data)
+  const handleProductClick = (product) => {
+    if (!isDisabled) {
+      setClickedId(`${product.id}-product`)
+      setChosenProduct({
+        ...chosenProduct,
+        product_price: product.selling_price,
+        product_type: product.product_type,
       })
-      .catch((error) => console.log(error))
+    }
+  }
 
+  const handleButtonClick = async () => {
     if (validateForm()) {
-      setShowPopUp(true)
+      const payload = {
+        id: form.user_id,
+        zone: form.zone_id,
+        product_id: clickedId ? clickedId.split("-")[0] : '',
+        payment_id: selectedPayment.id
+      }
+
+
+      await OrderApi.checkout(payload)
+        .then((response) => {
+          setChosenProduct({
+            ...chosenProduct,
+            username: response.data.username,
+            product_price: response.data.product_selling_price,
+            payment_method: selectedPayment.name
+          })
+          setShowPopUp(true)
+        })
+        .catch((error) => console.log(error.response))
     }
   }
 
@@ -183,7 +196,7 @@ const MobileLegendPage = (args) => {
                 <div
                   id={`${data.id}-product`}
                   className={clickedId === `${data.id}-product` ? "card-twilight clicked-diamond" : "card-twilight"}
-                  onClick={() => !isDisabled && setClickedId(`${data.id}-product`)}
+                  onClick={() => handleProductClick(data)}
                   style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
                 >
                   <img
@@ -205,7 +218,7 @@ const MobileLegendPage = (args) => {
                 <div
                   id={`${data.id}-product`}
                   className={clickedId === `${data.id}-product` ? "card-1 clicked-diamond" : "card-1"}
-                  onClick={() => !isDisabled && setClickedId(`${data.id}-product`)}
+                  onClick={() => handleProductClick(data)}
                   style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
                 >
                   <img
