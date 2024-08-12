@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 import Payment from "./payment_page/payment_page"
+import StringUtils from "./string_utilize"
 import { Link } from "react-router-dom"
 
 function PopUp({
@@ -8,7 +9,6 @@ function PopUp({
   onClose,
   chosenProduct,
   form,
-  paymentMethodName
 }) {
   const username = chosenProduct?.result?.username || 'Username Tidak Ditemukan'
 
@@ -19,7 +19,7 @@ function PopUp({
         Mohon konfirmasi Username anda sudah benar.
         <div className="order-info_row">
           <div className="first-col">Nickname:</div>
-          <div className="second-col">{username}</div>
+          <div className="second-col">{chosenProduct.username}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">ID:</div>
@@ -31,11 +31,11 @@ function PopUp({
         </div>
         <div className="order-info_row">
           <div className="first-col">Bayar dengan:</div>
-          <div className="second-col">{paymentMethodName}</div>
+          <div className="second-col">{chosenProduct.payment_method}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">Total:</div>
-          <div className="second-col">Rp.16.872</div>
+          <div className="second-col">{StringUtils.format_rupiah(chosenProduct.product_price)}</div>
         </div>
       </ModalBody>
       <ModalFooter>
