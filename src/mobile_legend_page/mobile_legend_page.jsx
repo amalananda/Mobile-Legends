@@ -15,6 +15,9 @@ import PopupTimer from "../popup_timer"
 import { OrderApi } from '../apis/orderApi'
 import MobileLegendForm from './mobile_legend_form'
 import "./mobile_legend_page.css"
+import Alert from "./alert"
+import DiamondProducts from './diamond_product'
+import SpecialProducts from './special_product'
 
 const defaultInputFields = {
   user_id: '',
@@ -41,6 +44,8 @@ const MobileLegendPage = (args) => {
   const [showPopUp, setShowPopUp] = useState(false)
   const [form, setForm] = useState(defaultInputFields)
   const [errors, setErrors] = useState(defaultInputFields)
+  const [showAlert, setShowAlert] = useState(false)
+  const [alertMessage, setAlertMessage] = useState('')
 
   useEffect(() => {
     const specialProductParams = {
@@ -156,18 +161,30 @@ const MobileLegendPage = (args) => {
         payment_id: selectedPayment.id
       }
 
+      try {
+        const response = await OrderApi.checkout(payload)
 
-      await OrderApi.checkout(payload)
-        .then((response) => {
+        if (!response.data.username || response.data.username === "Username Tidak Ditemukan") {
+          setAlertMessage("User ID atau Zone ID tidak valid. Mohon periksa kembaliiiiii.")
+          setShowAlert(true)
+        } else {
           setChosenProduct({
             ...chosenProduct,
             username: response.data.username,
             product_price: response.data.product_selling_price,
             payment_method: selectedPayment.name
           })
-          setShowPopUp(true)
-        })
-        .catch((error) => console.log(error.response))
+          setShowPopUp(true) // Pastikan ini dipanggil
+        }
+      } catch (error) {
+        setChosenProduct(defaultChosenProduct)
+        console.log("Error:", error)
+        setAlertMessage("User ID atau Zone ID tidak valid. Mohon periksa kembali")
+        setShowAlert(true)
+
+        // Tampilkan pesan error jika diperlukan
+        // setShowPopUp(true) // Atau tampilkan pop-up error jika diperlukan
+      }
     }
   }
 
@@ -188,51 +205,22 @@ const MobileLegendPage = (args) => {
               errors={errors}
             />
 
-            {/* List of Price Products */}
-            {/* Variant */}
-            <p className="my-3">{'Variasi Spesial'}</p>
-            <div className="cads-flex">
-              {specialProducts.map((data) => (
-                <div
-                  id={`${data.id}-product`}
-                  className={clickedId === `${data.id}-product` ? "card-twilight clicked-diamond" : "card-twilight"}
-                  onClick={() => handleProductClick(data)}
-                  style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
-                >
-                  <img
-                    className="twilightpass"
-                    src="TwilightPass_MLBB.png"
-                    width="75px"
-                  />
-                  <div>{data.name}</div>
-                  <div>{StringUtils.format_rupiah(data.selling_price)}</div>
-                </div>
-              ))}
-            </div>
+            {/* Variasi Spesial */}
+            <SpecialProducts
+              specialProducts={specialProducts}
+              clickedId={clickedId}
+              handleProductClick={handleProductClick}
+              isDisabled={isDisabled}
+            />
 
-
-            {/* Diamond  */}
-            <p className="my-3">{'Variasi Instan'}</p>
-            <div className="cads-flex">
-              {diamondProducts.map((data) => (
-                <div
-                  id={`${data.id}-product`}
-                  className={clickedId === `${data.id}-product` ? "card-1 clicked-diamond" : "card-1"}
-                  onClick={() => handleProductClick(data)}
-                  style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
-                >
-                  <img
-                    className="diamonds"
-                    src="Diamonds.png"
-                    width="50px"
-                  />
-                  <div>{data.name}</div>
-                  <div>{StringUtils.format_rupiah(data.selling_price)}</div>
-                </div>
-              ))}
-            </div>
-
-            < MetodePembayaran
+            {/* Variasi Instan */}
+            <DiamondProducts
+              diamondProducts={diamondProducts}
+              clickedId={clickedId}
+              handleProductClick={handleProductClick}
+              isDisabled={isDisabled}
+            />
+            <MetodePembayaran
               payments={payments}
               onPaymentSelect={setSelectedPayment}
             />
@@ -244,12 +232,18 @@ const MobileLegendPage = (args) => {
               {"Beli"}
             </Button>
           </Form>
+
+          <Alert
+            showAlert={showAlert}
+            message={alertMessage}
+            onClose={() => setShowAlert(false)}
+          />
           <PopUp
             chosenProduct={chosenProduct}
             show={showPopUp}
             onClose={handleClosePopUp}
             form={form}
-            paymentMethodName={selectedPayment.name}
+          // paymentMethodName={selectedPayment.name}
           />
         </Container>
       </div>

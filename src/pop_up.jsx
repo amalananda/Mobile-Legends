@@ -10,16 +10,29 @@ function PopUp({
   chosenProduct,
   form,
 }) {
-  const username = chosenProduct?.result?.username || 'Username Tidak Ditemukan'
+  const [showAlert, setShowAlert] = useState(false)
+
+  const handleConfirm = () => {
+    // Validasi UserID dan ZoneID
+    if (!chosenProduct || !chosenProduct.username || chosenProduct.username === "Username Tidak Ditemukan") {
+      setShowAlert(true)
+      return
+    }
+  }
 
   return (
     <Modal isOpen={show} toggle={onClose}>
       <ModalHeader toggle={onClose}>Detail Pesanan</ModalHeader>
       <ModalBody>
+        {showAlert && (
+          <div className="alert">
+            User ID atau Zone ID tidak valid. Mohon periksa kembali.
+          </div>
+        )}
         Mohon konfirmasi Username anda sudah benar.
         <div className="order-info_row">
           <div className="first-col">Nickname:</div>
-          <div className="second-col">{chosenProduct.username}</div>
+          <div className="second-col">{chosenProduct?.username || "Username Tidak Ditemukan"}</div>
         </div>
         <div className="order-info_row">
           <div className="first-col">ID:</div>
@@ -39,12 +52,12 @@ function PopUp({
         </div>
       </ModalBody>
       <ModalFooter>
-        <Button color="first">
+        <Button className="button-confirm" color="first" onClick={handleConfirm}>
           <Link style={{ textDecoration: "none", color: "black" }} to={`/payment_page`}>
             Confirm
           </Link>
         </Button>
-        <Button color="second" onClick={onClose}>
+        <Button className="button-cancel" color="second" onClick={onClose}>
           Cancel
         </Button>
       </ModalFooter>

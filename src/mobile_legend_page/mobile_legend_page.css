@@ -2,11 +2,39 @@
     margin-top: 20px;
     font-family: "Inria Serif";
   }
-  
+
+.alert-content {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #f8d7da;
+    color: #F5004F;
+    border: 5px solid #F5004F;
+    margin-top: 1rem;
+    z-index: 1000;
+  }
+
+Button.alert-button {
+    /* padding: 1rem; */
+    border-radius: 0.25rem;
+    background-color: #a7d397;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.alert {
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
   /* .my-3 {
     font-family: "Inria Serif";
   } */
-  
+
 .label-page {
   margin-top: 15px;
 }
@@ -15,19 +43,19 @@
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .diamonds {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .twilightpass {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .card-1 {
     box-sizing: border-box;
     width: 150px;
@@ -51,7 +79,7 @@
     cursor: pointer;
     background-color: #fff;
   }
-  
+
   .card-twilight {
     box-sizing: border-box;
     /* width: 150px; */
@@ -76,7 +104,7 @@
     cursor: pointer;
     background-color: #fff;
   }
-  
+
   .clicked-diamond {
     background-color: #e3f2b2;
   }
@@ -84,23 +112,23 @@
   .form-control {
     order: 1;
   }
-  
+
   .form-control.zone-input {
     order: 1;
   }
-  
+
   .order-info_row {
     display: flex;
     padding: 8px;
     font-family: sans-serif;
   }
-  
+
   .order-info_row .first-col {
-    color: #b6e90e;
+    color: black;
     width: 40%;
     align-self: center;
   }
-  
+
   .order-info_row .second-col {
     padding-left: 20px;
     width: 59%;
@@ -114,6 +142,15 @@
   margin-top: 15px;
   margin-bottom: 20px;
 }
+
+.button-confirm {
+  background-color: #a7d397;
+}
+
+.button-cancel {
+  background-color: #f8d7da;
+}
+
 
 @media only screen and (max-width: 767px) {
   .button-container {

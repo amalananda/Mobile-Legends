@@ -163,7 +163,7 @@
 @media only screen and (max-width: 767px) {
   .footer-links {
     text-align: center;
-  } 
+  }
   .col {
     list-style-type: none;
     padding: 0;
@@ -171,7 +171,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  } 
+  }
   .contact-header {
     font-weight: bold;
     margin-bottom: 3px;
@@ -189,7 +189,7 @@
   .image-footer {
     margin-right: 10px;
   }
-  
+
 }
 
 
